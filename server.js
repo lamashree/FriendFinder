@@ -1,6 +1,8 @@
 var bodyParser = require('body-parser')
 app.use(express.static('public'))
 const express = require('express')
+var path = require("path");
+
 const app = express()
  
 app.get('/', function (req, res) {
