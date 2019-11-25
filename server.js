@@ -1,7 +1,11 @@
 var express = require("express");
-var express = require("express");
+var bodyParser = require('body-parser');
+var path = require('path');
 var app = express();
+// app.use(express.static(__dirname + '/public'));
 app.use(express.static('public'))
+app.use('/css',express.static(__dirname +'/css'));
+var friends = require('./app/data/friends.js');
 
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 3000;
@@ -11,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require(( './app/routing/apiRoutes.js'))(app);
+require(( './app/routing/htmlRoutes.js'))(app);
 
 
 app.listen(PORT, function() {

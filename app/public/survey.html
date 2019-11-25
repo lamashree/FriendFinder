@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <title>Friend Finder</title>
 </head>
 
@@ -143,8 +149,7 @@
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
-                aria-hidden="true"></i>
+        <button type="submit" id="submit">
             Submit</button>
 
         <hr>
@@ -175,6 +180,42 @@
         
             </div>
           </div> -->
+    <script type="text/javascript">
+
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            console.log("this is working");
+            var newFriend = {
+                Name: $("#name").val().trim(),
+                Photo: $("#photo").val().trim(),
+                preferences: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+            };
+            console.log(newFriend);
+            $.post("/api/friends", newFriend,
+                function (data) {
+
+                    alert("yay!! you successfully summitted your friend request. we will find best match for you. ");
+
+                    $("name").val("");
+                    $("#photo").val("");
+                    $("#q1").val("");
+                    $("#q2").val("");
+                    $("#q3").val("");
+                    $("#q4").val("");
+                    $("#q5").val("");
+                    $("#q6").val("");
+                    $("#q7").val("");
+                    $("#q8").val("");
+                    $("#q9").val("");
+                    $("#q10").val("");
+
+
+                });
+
+        })
+
+    </script>
+
 </body>
 
 </html>
