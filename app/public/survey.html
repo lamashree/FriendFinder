@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -161,7 +161,7 @@
         </footer>
 
     </div>
-    <!-- <div id="results-modal" class="modal fade" role="dialog">
+     <div id="results-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
         
               <div class="modal-content">
@@ -191,7 +191,9 @@
                 preferences: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
             };
             console.log(newFriend);
-            $.post("/api/friends", newFriend,
+            var currentUrl = window.location.origin
+
+            $.post(currentUrl = "/api/friends", newFriend,
                 function (data) {
 
                     alert("yay!! you successfully summitted your friend request. we will find best match for you. ");
@@ -209,11 +211,13 @@
                     $("#q9").val("");
                     $("#q10").val("");
 
+                    $("#match-name").text(data.name);
+				$("#match-img").attr("src", data.photo);
+				$("#results-modal").modal("toggle");
+                })
 
                 });
-
-        })
-
+            
     </script>
 
 </body>
