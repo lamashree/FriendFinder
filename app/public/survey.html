@@ -5,10 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <title>Friend Finder</title>
@@ -181,66 +192,69 @@
 
         </div>
     </div> -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
     <script type="text/javascript">
-        body(
-            {background: cornsilk
-            }
-        )
-        
+        // body(
+        //     {background: cornsilk
+        //     }
+        // )
+
 
         $("#submit").on("click", function (event) {
             event.preventDefault();
             function validateForm() {
-        // var isValid = true;
-        // $('.link').each(function() {
-        //     var isLink = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
-        //     if (isLink.test($(this).val()) == false) {
-        //         isValid = false;
-        //         alert("Not a valid URL");
-        //     }
-        // });
-        // $('.form-control').each(function() {
-        //     if ($(this).val() === '')
-        //         isValid = false;
-        // });
-        // $('.chosen-select').each(function() {
-        //     if ($(this).val() === "")
-        //         isValid = false
-        // })
-        // return isValid;
-    }
+                // var isValid = true;
+                // $('.link').each(function() {
+                //     var isLink = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
+                //     if (isLink.test($(this).val()) == false) {
+                //         isValid = false;
+                //         alert("Not a valid URL");
+                //     }
+                // });
+                // $('.form-control').each(function() {
+                //     if ($(this).val() === '')
+                //         isValid = false;
+                // });
+                // $('.chosen-select').each(function() {
+                //     if ($(this).val() === "")
+                //         isValid = false
+                // })
+                // return isValid;
+            }
             console.log("this is working");
             var newFriend = {
                 Name: $("#name").val().trim(),
                 Photo: $("#photo").val().trim(),
-                preferences: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
-            };
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            }
             console.log(newFriend);
             var currentUrl = window.location.origin
 
-            $.post(currentUrl = "/api/friends", newFriend,
+            $.post("/api/friends", newFriend,
                 function (data) {
 
                     alert("yay!! you successfully summitted your friend request. we will find best match for you. ");
 
-                    $("name").val("");
-                    $("#photo").val("");
-                    $("#q1").val("");
-                    $("#q2").val("");
-                    $("#q3").val("");
-                    $("#q4").val("");
-                    $("#q5").val("");
-                    $("#q6").val("");
-                    $("#q7").val("");
-                    $("#q8").val("");
-                    $("#q9").val("");
-                    $("#q10").val("");
 
                     $("#match-name").html(data.name);
                     $("#match-img").attr("src", data.photo);
-                    $("#results-modal").modal("open");
+                    $("#results-modal").modal("toggle");
                 })
-
+                return alert("Please fill out all fields before submitting!");
         });
 
     </script>
