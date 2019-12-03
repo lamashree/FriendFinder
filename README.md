@@ -67,10 +67,10 @@ Total Difference: 2 + 1 + 2 = 5
 
  ## Output as Screenshort
 Home page of the APP.
-<img src="../../images/Image 12-2-19 at 5.01 PM.jpg"
+<img src="../images/Image 12-2-19 at 5.01 PM.jpg"
 alt=" home page  "/>
 
 Result for best match.
-<img src="../../images/Image 12-2-19 at 5.01 PM.jpg"
+<img src="../images/Image 12-2-19 at 5.01 PM.jpg"
 alt=" home page  "/>
 
