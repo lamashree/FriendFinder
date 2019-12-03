@@ -2,21 +2,28 @@
 You can use this application simply clicking following link.
 <https://findfriendhost.herokuapp.com/>
 
+## Installation
+Follow step below 
+git clone git@github.com:angrbrd/friend-finder.git
+cd friend-finder
+npm install
+
 ## Overview
 In this assignment, i developed the application that is a compatibility-based "FriendFinder" application basically a dating app.<br/>
 There are little survey for the user. This app match best match for user based on the rating in survey question. this app compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the totalDifference
 
-## Instructions
+## Technology use in app
+* Express 
+* npm 
+* node.js
+* Ajax 
+* javaScript
 
+## Requirements
 
 Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
-
-
 Your server.js file should require the basic npm packages we've used in class: express and path.
-
-
 Your htmlRoutes.js file should include two routes:
-
 A GET Route to /survey which should display the survey page.
 A default, catch-all route that leads to home.html which displays the home page.
 
@@ -65,13 +72,3 @@ Total Difference: 2 + 1 + 2 = 5
 
 
 
-
-
-Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both 5-3 and 3-5 as 2, and so on.
-The closest match will be the user with the least amount of difference.
-
-
-
-Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-
-The modal should display both the name and picture of the closest match.
