@@ -34,10 +34,7 @@ Your apiRoutes.js file should contain two routes:
 A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 
-
-
 You should save your application's data inside of app/data/friends.js as an array of objects. Each of these objects should roughly follow the format below.
-
 
 {
 "name":"Ahmed",
@@ -55,8 +52,6 @@ You should save your application's data inside of app/data/friends.js as an arra
 1
 ]
 }
-
-
 Determine the user's most compatible friend using the following as a guide:
 
 Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
@@ -70,5 +65,12 @@ User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
 
 Total Difference: 2 + 1 + 2 = 5
 
+ ## Output as Screenshort
+Home page of the APP.
+<img src="../images/Image 12-2-19 at 5.01 PM.jpg"
+alt=" home page  "/>
 
+Result for best match.
+<img src="../images/Image 12-2-19 at 5.01 PM.jpg"
+alt=" home page  "/>
 
