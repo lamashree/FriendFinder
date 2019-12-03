@@ -4,9 +4,9 @@ You can use this application simply clicking following link.
 
 ## Installation
 Follow step below 
-git clone git@github.com:angrbrd/friend-finder.git
-cd friend-finder
-npm install
+* git clone git@github.com:angrbrd/friend-finder.git
+* cd friend-finder
+* npm install
 
 ## Overview
 In this assignment, i developed the application that is a compatibility-based "FriendFinder" application basically a dating app.<br/>
@@ -67,10 +67,10 @@ Total Difference: 2 + 1 + 2 = 5
 
  ## Output as Screenshort
 Home page of the APP.
-<img src="/../images/Image 12-2-19 at 5.01 PM.jpg"
+<img src="../../../images/Image 12-2-19 at 5.01 PM.jpg"
 alt=" home page  "/>
 
 Result for best match.
-<img src="/../images/Image 12-2-19 at 5.01 PM.jpg"
+<img src="../../../images/Image 12-2-19 at 5.01 PM.jpg"
 alt=" home page  "/>
 
