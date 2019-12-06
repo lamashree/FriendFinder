@@ -73,4 +73,4 @@ alt=" home page  "/>
 Result for best match.
 <img src="../../../images/Image 12-2-19 at 5.01 PM.jpg"
 alt=" home page  "/>
-
+![Philadelphia's Magic Gardens. This place was so cool!](/public/images/Image.jpg "test")
