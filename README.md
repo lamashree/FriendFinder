@@ -66,11 +66,8 @@ User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
 Total Difference: 2 + 1 + 2 = 5
 
  ## Output as Screenshort
-Home page of the APP.
-<img src="../../../images/Image 12-2-19 at 5.01 PM.jpg"
-alt=" home page  "/>
+ Home page of the APP. -->
+![Philadelphia's Magic Gardens. This place was so cool!](/app/public/images/Image.jpg)
 
 Result for best match.
-<img src="../../../images/Image 12-2-19 at 5.01 PM.jpg"
-alt=" home page  "/>
-![Philadelphia's Magic Gardens. This place was so cool!](/public/images/Image.jpg "test")
+![Philadelphia's Magic Gardens. This place was so cool!](/app/public/images/Image2.jpg)
